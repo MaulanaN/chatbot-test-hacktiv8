@@ -5,5 +5,5 @@ Streamlit berjalan: NgrokTunnel: "https://agency-wistful-survivor.ngrok-free.dev
 
 <details>
   <summary>Google AI API key:</summary>
-  AIzaSyBkvLPxW_FIKY8lH-wpp382_Lumbnep3U0
+  
 </details>
