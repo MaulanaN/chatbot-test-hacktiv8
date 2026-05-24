@@ -5,8 +5,8 @@ from google import genai         # SDK Gemini dari Google
 
 # ── 1. Konfigurasi Halaman ───────────────────────────────────────────────────
 # st.title() dan st.caption() menampilkan judul dan keterangan di bagian atas
-st.title("Gemini Chatbot")
-st.caption("Chatbot sederhana menggunakan Google Gemini Flash")
+st.title("Wiki Builder Chatbot")
+st.caption("Chatbot sederhana untuk asistensi optimalisasi pembuatan konten pada Wiki. Powered by Gemini Flash.")
 
 # ── 2. Sidebar: Pengaturan App ───────────────────────────────────────────────
 # Semua widget di dalam blok 'with st.sidebar:' akan muncul di panel samping
@@ -21,6 +21,9 @@ with st.sidebar:
     # Parameter 'help' menampilkan tooltip saat kursor diarahkan ke tombol
     reset_button = st.button("Reset Percakapan", help="Hapus semua pesan dan mulai dari awal")
 
+    temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.7)
+    top_p = st.sidebar.slider("Top P", 0.0, 1.0, 0.95)
+    top_k = st.sidebar.slider("Top K", 0, 50, 40)
 # ── 3. Validasi API Key ──────────────────────────────────────────────────────
 # Kalau user belum memasukkan API key, tampilkan pesan dan hentikan eksekusi
 if not google_api_key:
@@ -66,15 +69,13 @@ if "chat" not in st.session_state:
     # Session ini menyimpan konteks percakapan di sisi Gemini
     st.session_state.chat = st.session_state.genai_client.chats.create(
         model="gemini-2.5-flash",
-        config={"system_instruction": "Kamu adalah asisten yang hanya menjawab kebutuhan tentang manajerial konten platform wiki. Sebagai asisten platform wiki, Anda sangat penting untuk menguasai Module dan Template pada MediaWiki."},
-        temperature=temp,
-        top_p=TopP,
-        top_k=TopK,
+        config={"system_instruction": "Kamu adalah asisten yang hanya menjawab kebutuhan tentang manajerial konten platform wiki. Sebagai asisten platform wiki, Anda sangat penting untuk menguasai Module dan Template pada MediaWiki.",
+                "temperature":temperature,
+                "top_p":top_p,
+                "top_k":top_k
+                }
     )
-    temp = st.sidebar.slider("Temperature", 0.0, 1.0, 0.7)
-    TopP = st.sidebar.slider("Top P", 0.0, 1.0, 0.95)
-    TopK = st.sidebar.slider("Top K", 0, 50, 40)
-
+    
 # Inisialisasi list riwayat pesan kalau belum ada
 # List ini menyimpan semua pesan untuk ditampilkan kembali saat skrip dijalankan ulang
 if "messages" not in st.session_state:
