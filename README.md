@@ -7,12 +7,17 @@ Testing chatbot with AI and delivered as Hacktiv8 Final Project
 * Mediawiki syntaxes
 
 
+<b>Tools:</b>
+- Google Colab
+- Streamlit
+- NGROK
+  
 Chatbot located at : "https://agency-wistful-survivor.ngrok-free.dev" -> "http://localhost:8501"
 
 Reference:
 * Hacktiv8 Tutorial
-* Source repo: adiptamartulandi/chatbot-streamlit-demo
-
+* Source repo: [adiptamartulandi/chatbot-streamlit-demo
+](https://github.com/adiptamartulandi/chatbot-streamlit-demo)
 <hr>
 
 <h2>STEP 1 — Install Streamlit dan pyngrok</h2>
@@ -21,8 +26,8 @@ Reference:
 !pip install -q streamlit pyngrok google-genai
 ```
 
-<h2>STEP 2 - Add NGROK Token into Codelab</h2>
-Add your own NGROK token for tunneling into Google Codelab. Add it to your Codelab secret.
+<h2>STEP 2 - Add NGROK Token into Colab</h2>
+Add your own NGROK token for tunneling into Google Colab. Add it to your Colab secret.
 
 ```python
 from pyngrok import ngrok
