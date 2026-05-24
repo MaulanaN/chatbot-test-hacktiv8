@@ -1,7 +1,13 @@
 # chatbot-test-hacktiv8
 Testing chatbot with AI and delivered as Hacktiv8 Final Project
 
-Streamlit berjalan: NgrokTunnel: "https://agency-wistful-survivor.ngrok-free.dev" -> "http://localhost:8501"
+<b>Speciality: </b>
+* Assisting newbie Wiki Editor in maintaining their own wiki site
+* Mediawiki Module and Template consideration.
+* Mediawiki syntaxes
+
+
+Chatbot located at : "https://agency-wistful-survivor.ngrok-free.dev" -> "http://localhost:8501"
 
 Reference:
 * Hacktiv8 Tutorial
