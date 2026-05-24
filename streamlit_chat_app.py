@@ -69,7 +69,7 @@ if "chat" not in st.session_state:
     # Session ini menyimpan konteks percakapan di sisi Gemini
     st.session_state.chat = st.session_state.genai_client.chats.create(
         model="gemini-2.5-flash",
-        config={"system_instruction": "Kamu adalah asisten yang hanya menjawab kebutuhan tentang manajerial konten platform wiki. Sebagai asisten platform wiki, Anda sangat penting untuk menguasai Module dan Template pada MediaWiki.",
+        config={"system_instruction": "Kamu adalah asisten yang hanya menjawab kebutuhan tentang manajerial konten platform wiki. Sebagai asisten platform wiki, Anda sangat penting untuk menguasai Module, Template, dan Syntax wiki pada MediaWiki.",
                 "temperature":temperature,
                 "top_p":top_p,
                 "top_k":top_k
