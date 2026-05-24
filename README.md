@@ -2,3 +2,4 @@
 Testing chatbot with AI and delivered as Hacktiv8 Final Project
 
 Streamlit berjalan: NgrokTunnel: "https://agency-wistful-survivor.ngrok-free.dev" -> "http://localhost:8501"
+Google AI API key: <details> AIzaSyBkvLPxW_FIKY8lH-wpp382_Lumbnep3U0 </details>
