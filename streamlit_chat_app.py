@@ -65,7 +65,7 @@ if "chat" not in st.session_state:
     # Buat chat session baru dengan model gemini-2.5-flash
     # Session ini menyimpan konteks percakapan di sisi Gemini
     st.session_state.chat = st.session_state.genai_client.chats.create(
-        model="gemini-2.5-flash"
+        model="gemini-2.5-flash",
         config={"system_instruction": "Kamu adalah asisten yang hanya menjawab kebutuhan tentang manajerial konten platform wiki."}
     )
     st.sidebar.slider("Temperature", 0.0, 1.0, 0.7)
