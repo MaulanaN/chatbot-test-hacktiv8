@@ -67,6 +67,7 @@ if "chat" not in st.session_state:
     st.session_state.chat = st.session_state.genai_client.chats.create(
         model="gemini-2.5-flash"
     )
+    st.sidebar.slider("Temperature", 0.0, 1.0, 0.7)
 
 # Inisialisasi list riwayat pesan kalau belum ada
 # List ini menyimpan semua pesan untuk ditampilkan kembali saat skrip dijalankan ulang
